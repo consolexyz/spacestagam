@@ -1,0 +1,14 @@
+.nav-bar{
+    display: flex;
+    padding: 5px;
+}
+.logo{
+    width:75px;
+    height: 50px;
+}
+.spacestagram{
+    font-size: 20px;
+    margin-left: 4px;
+    color: white;
+    line-height: 10px;
+}
