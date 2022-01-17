@@ -4,10 +4,8 @@
   margin: 0 auto;
 } 
 .datePicker{
-	align-items: center;
-	/* margin-left: 43%; */
+	 margin-left: 42%;
     /* margin-bottom: 2%; */
-	margin: 0 auto;
 }
 .react-datepicker__input-container input {
   margin:15px 0;
@@ -17,13 +15,10 @@
 	border:1px solid #bbb;
 	border-radius:20px;
 	display:inline-block;
-	-webkit-box-sizing:border-box;
-	   -moz-box-sizing:border-box;
-	        box-sizing:border-box;
-    -webkit-transition:0.2s ease all;
-	   -moz-transition:0.2s ease all;
-	    -ms-transition:0.2s ease all;
-	     -o-transition:0.2s ease all;
-	        transition:0.2s ease all;
+}
 
+@media only screen and (max-width: 600px){
+	.datePicker{
+	margin-left: 21%;
+	}
 }

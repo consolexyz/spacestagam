@@ -35,7 +35,7 @@
     margin-left: 4px;
 }
 .rover-title{
-    color: blue;
+    color: dodgerblue;
     margin-right: 5px;
 }
 .like-button-wrapper {
@@ -70,21 +70,35 @@
 .like-button-wrapper.like::before {
     background-color: dodgerblue;
   }
-  .like-button-wrapper .suffix {
+   .like-button-wrapper .suffix {
     opacity: 0;
     transition: opacity 300ms, transform 300ms;
     transform: translateX(15px);
-  }
-  .like-button-wrapper .suffix.like {
+  } 
+.like-button-wrapper .suffix.like {
     opacity: 1;
     transform: translateX(0);
-  }
+ } 
 .heart-icon{
     color: white;
     margin-top:4px;
     margin-right: 5px;
 }
+.like-button-wrapper.clicked::before {
+    animation: click 300ms;
+  }
 
+  @keyframes click {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.96);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 @media only screen and (max-width: 400px){
 .rovercard{

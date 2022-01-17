@@ -32,7 +32,7 @@ const RoverCard =(props) => {
                      >
                          <div className='like-button'>
                              {Heart}
-                             <span>Like</span>
+                              <span>Like</span> 
                              <span className={cn("suffix", { like })}>d</span>
                          </div>
                      </button>
