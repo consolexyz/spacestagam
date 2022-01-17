@@ -3,7 +3,7 @@ body {
   background-image: url('https://res.cloudinary.com/mosesjayz/image/upload/v1641999103/spacestagram/pexels-alberlan-barros-7311920_e9iv0i.jpg');
   background-repeat: none;
   background-size: cover;
-  font-family: 'Michroma', sans-serif;
+  margin:0  auto;
 }
 
 code {

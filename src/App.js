@@ -4,18 +4,25 @@ import React,{useState, useEffect}from 'react';
 import Navbar from './components/navbar/Navbar';
 import Header from './components/header/Header';
 import RoverImageList from './components/roverimagelist/RoverImageList';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css'
+import { DatePicker } from 'antd';
+import 'antd/dist/antd.css'; 
 import './App.css';
 
 
 const App = ()  => {
   const [data, setData] = useState([]);
-  const [date, setDate] = useState(new Date("2015/06/03"))
+  const [date, setDate] = useState('2017-06-03')
 
+  function onHandleChange (value,dateString) {
+    setDate(dateString)
+    console.log(value)
+   }
+
+
+  
 
   useEffect( () => {
-      axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-06-03&api_key=wI2lqTaushheU7bWvv9gPJgOLiH4TO84b9nl8DMl`)
+      axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=wI2lqTaushheU7bWvv9gPJgOLiH4TO84b9nl8DMl`)
       .then(res => {
         console.log(res)
         setData(res.data.photos)
@@ -23,23 +30,17 @@ const App = ()  => {
       .catch( err => {
         console.log(err)
       })
-  },[])
-
+  },[date])
 
  return (
    <div className='App'>
      <Navbar />
      <Header />
      <DatePicker 
-     selected={date} 
-     minDate={date}
-     onChange={date => setDate(date)}
-     dateFormat='yyyy/MM/dd'
-     closeOnScroll={true}
-     showMonthDropdown
-     showYearDropdown
-     scrollableYearDropdown
-     wrapperClassName='datePicker'
+     onChange={onHandleChange}
+     size={'large'}
+     className='datePicker'
+
      />
      <RoverImageList data ={data} />  
     </div>
