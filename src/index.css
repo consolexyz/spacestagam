@@ -1,9 +1,12 @@
 body {
-  margin: 0;
-  background-image: url('https://res.cloudinary.com/mosesjayz/image/upload/v1641999103/spacestagram/pexels-alberlan-barros-7311920_e9iv0i.jpg');
+  background-image: url('https://res.cloudinary.com/mosesjayz/image/upload/v1641999103/spacestagram/pexels-alberlan-barros-7311920_e9iv0i.jpg') no-repeat center center fixed;
   background-repeat: none;
   background-size: cover;
   margin:0  auto;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 code {
