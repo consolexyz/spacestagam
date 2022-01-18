@@ -2,9 +2,13 @@
   overflow: hidden;
   font-family: 'Michroma', sans-serif;
   margin: 0 auto;
+  text-align: center;
 } 
 .datePicker{
-	 margin-left: 42%;
+	 margin-left: 42%; 
+	 margin-bottom: 1%;
+	 display:block;
+	 width: 200px;
     /* margin-bottom: 2%; */
 }
 .react-datepicker__input-container input {

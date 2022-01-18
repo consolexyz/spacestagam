@@ -8,7 +8,7 @@ const RoverCard =(props) => {
 
    const Heart  = <FontAwesomeIcon icon={faHeart} className='heart-icon' />
    const [like, setlike] = useState(null)
-   const [clicked, setClicked] = useState(false);
+   
 
 
 
@@ -22,12 +22,7 @@ const RoverCard =(props) => {
                  </div>
                  <div className='like-container'>
                      <button
-                      onClick={()=> {
-                          setlike(!like)
-                        console.log('clicked')
-                      }
-                    }
-                      onAnimationEnd={()=>setClicked(false)}
+                      onClick={()=> setlike(!like)}
                        className={cn('like-button-wrapper',{like})}
                      >
                          <div className='like-button'>

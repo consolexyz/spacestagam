@@ -4,21 +4,26 @@ import React,{useState, useEffect}from 'react';
 import Navbar from './components/navbar/Navbar';
 import Header from './components/header/Header';
 import RoverImageList from './components/roverimagelist/RoverImageList';
-import { DatePicker } from 'antd';
+import { DatePicker ,  Spin } from 'antd';
 import 'antd/dist/antd.css'; 
 import './App.css';
 
 
 const App = ()  => {
   const [data, setData] = useState([]);
-  const [date, setDate] = useState('2017-06-03')
+  const [date, setDate] = useState('2017-06-03');
+  const [loading, setLoading] = useState(true);
+
+
 
   function onHandleChange (value,dateString) {
     setDate(dateString)
+    // setLoading(false)
     console.log(value)
    }
 
 
+     
   
 
   useEffect( () => {
@@ -26,11 +31,14 @@ const App = ()  => {
       .then(res => {
         console.log(res)
         setData(res.data.photos)
+         setLoading(false)
       })
       .catch( err => {
         console.log(err)
       })
   },[date])
+
+
 
  return (
    <div className='App'>
@@ -38,11 +46,14 @@ const App = ()  => {
      <Header />
      <DatePicker 
      onChange={onHandleChange}
-     size={'large'}
      className='datePicker'
-
      />
-     <RoverImageList data ={data} />  
+    
+     {
+      !loading ? <RoverImageList data ={data} /> :
+        <Spin size='large'/> 
+     }
+      
     </div>
 )
 }
