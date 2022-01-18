@@ -2,7 +2,7 @@ body {
   margin:0  auto;
   background-image: url('./galaxy.jpg') ;
   background-repeat: none;
-  background-size: auto;
+  background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+@media only screen and (max-width:415px){
+  body{
+    background-image: url('/src/galaxy-mobile.jpeg');
+    background-size: contain;
+  }
+
+  }
